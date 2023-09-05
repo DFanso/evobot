@@ -1,0 +1,16 @@
+version: '3'
+services:
+  project-delta:
+    container_name: Project_Delta
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - Project_Delta:/home/evobot
+    environment:
+      USER: evobot
+    command: ["npm", "run", "prod"]
+    restart: always 
+
+volumes:
+  Project_Delta:
